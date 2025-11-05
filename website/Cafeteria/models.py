@@ -56,3 +56,11 @@ class Comentario(models.Model):
 
     def __str__(self):
         return f"Comentario de {self.nombre_cliente}"
+
+class Evento(models.Model):
+    nombre = models.CharField(max_length=100)
+    descripcion = models.TextField()
+    fecha = models.DateField()
+
+    def __str__(self):
+        return self.nombre

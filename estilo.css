@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #3e2f1c;
+}
+
+header {
+    background-color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding: 10px 50px;
+    border-bottom: 2px solid #ddd;
+}
+
+.principal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.encabezado {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+nav button {
+    background-color:#e9ddce ;
+    border: none;
+    padding: 10px 20px;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+nav button:hover {
+    background-color: #b8905c;
+}
+
+.inicio {
+    height: 100vh;
+    background-image: url("imagenes/img1.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.inicio2 h1 {
+    font-size: 40px;
+}
+
+.inicio2 button {
+    background-color: #b8905c;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    color: white;
+    border-radius: 5px;
+}
+
+.bienvenida {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 80px 50px;
+}
+
+.bienvenida img {
+    width: 40%;
+    border-radius: 10px;
+}
+
+.bienvenida .bienvenida2 {
+    width: 50%;
+}
+
+.bienvenida button {
+    background-color: #b8905c;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.sec_info {
+    text-align: center;
+    padding: 60px 50px;
+}
+
+.informacion {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px;
+}
+
+.informacion div {
+    width: 30%;
+}
+
+.informacion img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.informacion h3 {
+    margin-top: 10px;
+}
+
+.sec_info button {
+    background-color: #b8905c;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #8b6c44;
+}
+
+footer {
+    background-color: #f5f5f5;
+    text-align: center;
+    padding: 20px;
+    color: #6b4e2e;
+}

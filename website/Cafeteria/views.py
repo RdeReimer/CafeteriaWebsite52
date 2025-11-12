@@ -33,11 +33,10 @@ def eventos(request):
 #     autos = Vehiculo.objects.all()
 #     return render(request, 'autos.html', {'autos':autos})
 
-# def sucursales(request):
-#     sucursales = Sucursal.objects.all()
-#     return render(request, 'sucursales.html', {'sucursales': sucursales})
+def sucursales(request):
+     sucursales = Sucursal.objects.all()
+     return render(request, 'sucursales.html', {'sucursales': sucursales})
 
-<<<<<<< HEAD
 def comentarios(request):
     reseñas = reseña.objects.order_by('-fecha')[:3]
     if request.method == 'POST':
@@ -52,8 +51,3 @@ def comentarios(request):
 def finalizar_compra(request):
     messages.success(request, "Gracias por tu compra! Te gustaria dejar una reseña sobre tu experiencia?")
     return redirect('comentarios')
-=======
-# def comentarios(request):
-#     comentarios = Comentario.objects.all()
-#     return render(request, 'comentarios.html', {'comentarios': comentarios})
->>>>>>> fb531950e6374e2834c01e4042a869e338bc3415

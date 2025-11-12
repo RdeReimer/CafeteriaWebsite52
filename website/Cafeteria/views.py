@@ -6,7 +6,6 @@ from .forms import ReseñaForm
 # Create your views here.
 
 def inicio(request):
-<<<<<<< HEAD
     productos = Producto.objects.filter(categoria='normal')[:4]
     return render(request, 'index.html', {'productos': productos})
 

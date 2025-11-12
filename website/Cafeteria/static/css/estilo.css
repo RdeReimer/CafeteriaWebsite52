@@ -1,0 +1,351 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #faf6f0;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+
+header {
+    background-color: #6b4f4f;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+section.presentacion {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #d9c1ac;
+    color: #3e2723;
+}
+
+section.presentacion h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+section.presentacion p {
+    font-size: 1.1em;
+}
+
+.btn {
+    background-color: #6b4f4f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    margin-top: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.btn:hover {
+    background-color: #8c6e6e;
+}
+
+
+.productos-section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.productos-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    justify-items: center;
+    margin: 40px auto;
+    max-width: 1100px;
+}
+
+
+.producto {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.15);
+    padding: 15px;
+    width: 220px;
+    text-align: center;
+}
+
+.producto img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.producto h3 {
+    margin: 10px 0 5px;
+}
+
+.producto p {
+    color: #6b4f4f;
+    font-weight: bold;
+}
+
+
+footer {
+    background-color: #6b4f4f;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9em;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+.promo-navidad {
+    background-color: #f0f8f5;
+    border-left: 5px solid #2e8b57;
+    padding: 20px;
+    width: 25%;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.promo-navidad h3 {
+    color: #2e8b57;
+}
+
+.btn-navidad {
+    background-color: #2e8b57;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.carrito {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-top: 2px solid #ccc;
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+.producto {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+    width: 100%;
+    max-width: 300px;
+}
+
+.producto img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.producto:hover {
+    transform: scale(1.05);
+}
+
+/* 🎄 Estilo del Pop-up Navideño */
+.popup-navidad {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid #b71c1c;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    border-radius: 15px;
+    padding: 20px;
+    width: 280px;
+    transform: translateY(200%);
+    transition: transform 0.5s ease;
+    z-index: 999;
+}
+
+.popup-navidad.mostrar {
+    transform: translateY(0);
+}
+
+.popup-contenido {
+    text-align: center;
+    color: #333;
+}
+
+.popup-contenido h3 {
+    color: #b71c1c;
+    margin-bottom: 10px;
+}
+
+.popup-contenido .btn-navidad {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background: #b71c1c;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+#cerrar-popup {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #444;
+}
+
+.comentarios-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fffdf8;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.reseñas {
+    margin-bottom: 40px;
+}
+
+.reseña {
+    background-color: #fdfaf5;
+    border: 1px solid #e2d4c0;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.reseña-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+.reseña .comentario {
+    margin-top: 8px;
+    color: #5b4636;
+}
+
+.reseña .fecha {
+    font-size: 0.85em;
+    color: #888;
+}
+
+.formulario-reseña h2 {
+    margin-bottom: 10px;
+    color: #3e2723;
+}
+
+.formulario-reseña form {
+    background-color: #fffaf3;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #e2d4c0;
+}
+
+.formulario-reseña button {
+    background-color: #6b4f4f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.formulario-reseña button:hover {
+    background-color: #8c6e6e;
+}
+
+/* Popup de reseña */
+#popup-reseña {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 9999;
+}
+
+#popup-reseña.mostrar {
+    visibility: visible;
+    opacity: 1;
+}
+
+#popup-reseña .popup-content {
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    width: 400px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+#popup-reseña h2 {
+    margin-bottom: 10px;
+}
+
+#popup-reseña p {
+    margin-bottom: 20px;
+}
+
+.popup-buttons button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.popup-buttons .si {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.popup-buttons .no {
+    background-color: #ccc;
+    color: #000;
+}

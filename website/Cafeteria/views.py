@@ -1,18 +1,22 @@
-from django.shortcuts import render
-from .models import Producto, Evento, Sucursal, Vehiculo, Comentario
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from .models import Producto, Evento, Sucursal, Vehiculo, Comentario, reseña
+from .forms import ReseñaForm
 
 # Create your views here.
 
 def inicio(request):
-    return render(request, 'index.html')
+    productos = Producto.objects.filter(categoria='normal')[:4]
+    return render(request, 'index.html', {'productos': productos})
 
 def productos(request):
-    productos = Producto.objects.all()
+    productos = Producto.objects.filter(categoria='normal')
     return render(request, 'productos.html', {'productos': productos})
 
 def eventos(request):
+    productos_navidad = Producto.objects.filter(categoria='navidad')
     eventos = Evento.objects.all()
-    return render(request, 'eventos.html', {'eventos': eventos})
+    return render(request, 'eventos.html', {'eventos': eventos, 'productos_navidad': productos_navidad})
 
 def autos(request):
     autos = Vehiculo.objects.all()
@@ -23,5 +27,16 @@ def sucursales(request):
     return render(request, 'sucursales.html', {'sucursales': sucursales})
 
 def comentarios(request):
-    comentarios = Comentario.objects.all()
-    return render(request, 'comentarios.html', {'comentarios': comentarios})
+    reseñas = reseña.objects.order_by('-fecha')[:3]
+    if request.method == 'POST':
+        form = ReseñaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('comentarios')
+    else:
+        form = ReseñaForm()
+    return render(request, 'comentarios.html', {'reseñas': reseñas, 'form': form})
+
+def finalizar_compra(request):
+    messages.success(request, "Gracias por tu compra! Te gustaria dejar una reseña sobre tu experiencia?")
+    return redirect('comentarios')

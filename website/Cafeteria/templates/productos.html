@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Completo - Cafetería Website52</title>
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Menú de Cafetería Website52</h1>
+        <nav>
+            <a href="{% url 'inicio' %}">Inicio</a>
+            <a href="{% url 'productos' %}">Menú</a>
+            <a href="{% url 'eventos' %}">Evento</a>
+            <a href="{% url 'sucursales' %}">Sucursales</a>
+        </nav>
+    </header>
+
+    <main class="menu-container">
+        <section class="productos-section">
+            <h2>Todos los Productos</h2>
+            <div class="productos-grid">
+                {% for producto in productos %}
+                    <div class="producto">
+
+                        {% if "capuchino" in producto.nombre|lower %}
+                            <img src="{% static 'img/capuchino.png' %}" alt="Capuchino Clásico">
+                        {% elif "mocha" in producto.nombre|lower %}
+                            <img src="{% static 'img/chocomocha.png' %}" alt="Mocha Chocolate">
+                        {% elif "espresso" in producto.nombre|lower %}
+                            <img src="{% static 'img/espresso2.png' %}" alt="Espresso Doble">
+                        {% elif "caramel" in producto.nombre|lower %}
+                            <img src="{% static 'img/caramelmacchiato.png' %}" alt="Caramel Macchiato">
+                        {% elif "almendra" in producto.nombre|lower %}
+                            <img src="{% static 'img/lattealmendra.png' %}" alt="Latte Almendra">
+                        {% elif "americano" in producto.nombre|lower %}
+                            <img src="{% static 'img/americano.png' %}" alt="Café Americano">
+                        {% elif "matcha" in producto.nombre|lower %}
+                            <img src="{% static 'img/matcha.png' %}" alt="Matcha Latte">
+                        {% elif "frappé" in producto.nombre|lower or "frappe" in producto.nombre|lower %}
+                            <img src="{% static 'img/frappe.png' %}" alt="Frappé de Café">
+                        {% elif "vainilla" in producto.nombre|lower %}
+                            <img src="{% static 'img/latteVainilla.png' %}" alt="Latte Vainilla">
+                        {% elif "avellana" in producto.nombre|lower %}
+                            <img src="{% static 'img/latteavellana.png' %}" alt="Latte Avellana">
+                        {% elif "moka blanco" in producto.nombre|lower %}
+                            <img src="{% static 'img/mokablanco.png' %}" alt="Moka Blanco">
+                        {% elif "cheesecake" in producto.nombre|lower %}
+                            <img src="{% static 'img/cheesecake.png' %}" alt="Cheesecake">
+                        {% elif "croissant" in producto.nombre|lower %}
+                            <img src="{% static 'img/croissant.png' %}" alt="Croissant">    
+                        {% else %}
+                            <img src="{% static 'img/default_cafe.jpg' %}" alt="{{ producto.nombre }}">
+                        {% endif %}
+
+                        <h3>{{ producto.nombre }}</h3>
+                        <p>{{ producto.descripcion }}</p>
+                        <p><strong>${{ producto.precio }}</strong></p>
+                        <button class="agregar-carrito" 
+                                data-nombre="{{ producto.nombre }}" 
+                                data-precio="{{ producto.precio }}">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+
+    <section class="carrito">
+        <h3>🛒 Tu Carrito</h3>
+        <ul id="lista-carrito"></ul>
+        <p>Total: $<span id="total">0</span></p>
+        <button id="finalizar-pedido">Finalizar Pedido</button>
+    </section>
+
+    <footer>
+        <p>© 2025 Cafetería Website52 — Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="{% static 'js/carrito.js' %}"></script>
+
+    <div id="popup-navidad" class="popup-navidad">
+        <div class="popup-contenido">
+            <h3>🎅 ¡Vive el Espíritu Navideño!</h3>
+            <p>Disfruta promociones 2x1 en nuestros productos de temporada 🎁</p>
+            <a href="{% url 'eventos' %}" class="btn-navidad">Ver productos navideños</a>
+            <span id="cerrar-popup">×</span>
+        </div>
+    </div>
+
+    <script src="{% static 'js/popup.js' %}"></script>
+
+</body>
+</html>

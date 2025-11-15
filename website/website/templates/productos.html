@@ -9,13 +9,15 @@
 </head>
 <body>
     <header>
-        <h1>Menú de Cafetería Website52</h1>
-        <nav>
+        <div class="principal">
+            <p class="encabezado">Cafetería</p>
+            <nav class="principal-n">
             <a href="{% url 'inicio' %}">Inicio</a>
             <a href="{% url 'productos' %}">Menú</a>
             <a href="{% url 'eventos' %}">Evento</a>
             <a href="{% url 'sucursales' %}">Sucursales</a>
-        </nav>
+            </nav>
+        </div>
     </header>
 
     <main class="menu-container">
@@ -56,7 +58,10 @@
                         {% endif %}
 
                         <h3>{{ producto.nombre }}</h3>
-                        <p>{{ producto.descripcion }}</p>
+                        <p class="ver-mas">
+    Ver más <span class="flecha">▼</span>
+</p>
+                        <p class="producto-descripcion">{{ producto.descripcion }}</p>
                         <p><strong>${{ producto.precio }}</strong></p>
                         <button class="agregar-carrito" 
                                 data-nombre="{{ producto.nombre }}" 

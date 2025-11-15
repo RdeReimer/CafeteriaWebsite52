@@ -34,9 +34,10 @@ nav button {
     background-color:#e9ddce ;
     border: none;
     padding: 10px 20px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     border-radius: 5px;
     margin-top: 15px;
+
 }
 
 nav button:hover {

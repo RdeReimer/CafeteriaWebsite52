@@ -12,12 +12,11 @@
     <header>
         <div class="principal">
             <p class="encabezado">Cafetería</p>
-            <nav>
-                <button>Productos</button>
-                <button>Eventos</button>
-                <button>Sucursales</button>
-                <button>Autos</button>
-                <button>Comentarios</button>
+            <nav class="principal-n">
+            <a href="{% url 'inicio' %}">Inicio</a>
+            <a href="{% url 'productos' %}">Menú</a>
+            <a href="{% url 'eventos' %}">Evento</a>
+            <a href="{% url 'sucursales' %}">Sucursales</a>
             </nav>
         </div>
     </header>

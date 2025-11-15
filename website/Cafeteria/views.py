@@ -7,7 +7,7 @@ from .forms import ReseñaForm
 
 def inicio(request):
     productos = Producto.objects.filter(categoria='normal')[:4]
-    return render(request, 'index.html', {'productos': productos})
+    return render(request, 'home.html', {'productos': productos})
 
 def productos(request):
     productos = Producto.objects.filter(categoria='normal')
@@ -17,25 +17,14 @@ def eventos(request):
     productos_navidad = Producto.objects.filter(categoria='navidad')
     eventos = Evento.objects.all()
     return render(request, 'eventos.html', {'eventos': eventos, 'productos_navidad': productos_navidad})
-=======
-    return render(request, 'cafeteria.html')
 
-# def productos(request):
-#     productos = Producto.objects.all()
-#     return render(request, 'productos.html', {'productos': productos})
-
-# def eventos(request):
-#     eventos = Evento.objects.all()
-#     return render(request, 'eventos.html', {'eventos': eventos})
->>>>>>> fb531950e6374e2834c01e4042a869e338bc3415
-
-# def autos(request):
-#     autos = Vehiculo.objects.all()
-#     return render(request, 'autos.html', {'autos':autos})
+def autos(request):
+    autos = Vehiculo.objects.all()
+    return render(request, 'autos.html', {'autos': autos})
 
 def sucursales(request):
-     sucursales = Sucursal.objects.all()
-     return render(request, 'sucursales.html', {'sucursales': sucursales})
+    sucursales = Sucursal.objects.all()
+    return render(request, 'sucursales.html', {'sucursales': sucursales})
 
 def comentarios(request):
     reseñas = reseña.objects.order_by('-fecha')[:3]

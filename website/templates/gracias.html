@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gracias por tu compra</title>
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+</head>
+
+<body>
+
+<header>
+    <h1 class="encabezado">Cafetería</h1>
+</header>
+
+<section class="mensaje-gracias">
+    <h2>¡Gracias por tu compra! ☕</h2>
+
+    <p>Tu pedido será entregado por:</p>
+
+    <p class="dato"><strong>{{ persona }}</strong></p>
+
+    <p>En el vehículo:</p>
+
+    <p class="dato"><strong>{{ vehiculo }}</strong></p>
+
+    <a href="{% url 'inicio' %}" class="btn-volver">Volver al inicio</a>
+</section>
+
+<footer>
+    <p>Cafetería - Gracias por preferirnos</p>
+</footer>
+
+</body>
+</html>

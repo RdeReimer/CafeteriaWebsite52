@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos Navideños - Cafetería</title>
+
+    <link rel="stylesheet" href="{% static 'css/estilonav.css' %}">
+</head>
+<body>
+
+<header class="header-navidad">
+    <h1>🎄 Eventos Navideños 2025 🎅</h1>
+    <nav>
+        <a href="{% url 'inicio' %}">Inicio</a>
+        <a href="{% url 'productos' %}">Productos</a>
+        <a href="{% url 'eventos' %}">Eventos</a>
+        <a href="{% url 'sucursales' %}">Sucursales</a>
+        <a href="{% url 'comentarios' %}">Comentarios</a>
+    </nav>
+</header>
+
+<section class="intro-navidad">
+    <h2>✨ Bienvenido a la Temporada Navideña ✨</h2>
+    <p>Disfruta de nuestros productos especiales creados solo para esta época tan mágica del año.</p>
+</section>
+
+<section class="productos-navidad">
+    {% for p in productos %}
+    <div class="card-producto">
+        
+        {% if p.nombre == "Café Jengibre" %}
+            <img src="{% static 'img/cafejengibre.png' %}" alt="{{ p.nombre }}">
+
+        {% elif p.nombre == "Latte Navideño" %}
+            <img src="{% static 'img/lattenavidad.png' %}" alt="{{ p.nombre }}">
+
+        {% elif p.nombre == "Panqué de Nuez" %}
+            <img src="{% static 'img/panque.png' %}" alt="{{ p.nombre }}">
+
+        {% elif p.nombre == "Galletas de Jengibre" %}
+            <img src="{% static 'img/jengibre.png' %}" alt="{{ p.nombre }}">
+
+        {% elif p.nombre == "Frappé Menta Frost" %}
+            <img src="{% static 'img/menta.png' %}" alt="{{ p.nombre }}">
+
+        {% elif p.nombre == "Pastelito de Red Velvet" %}
+            <img src="{% static 'img/velvet.webp' %}" alt="{{ p.nombre }}">
+
+        {% elif p.nombre == "Chocolate Caliente Premium" %}
+            <img src="{% static 'img/caliente.png' %}" alt="{{ p.nombre }}">
+
+        {% elif p.nombre == "Ponche Navideño" %}
+            <img src="{% static 'img/ponche.png' %}" alt="{{ p.nombre }}">
+
+        {% elif p.nombre == "Café Caramelo Festivo" or p.nombre == "Café Caremelo Festivo" %}
+            <img src="{% static 'img/caramelocafe.png' %}" alt="{{ p.nombre }}">
+
+        {% endif %}
+
+        <h3>{{ p.nombre }}</h3>
+        <p>{{ p.descripcion }}</p>
+
+        <button class="precio agregar-carrito"
+                data-id="{{ p.id }}"
+                data-nombre="{{ p.nombre }}"
+                data-precio="{{ p.precio }}">
+            $ {{ p.precio }}
+        </button>
+
+    </div>
+    {% endfor %}
+</section>
+
+
+
+<canvas id="snowCanvas"></canvas>
+<script src="{% static 'js/nieve.js' %}"></script>
+
+<div class="player-box">
+    <audio id="musicaNavidad" autoplay loop>
+        <source src="{% static 'audio/navidad.mp3' %}" type="audio/mp3">
+    </audio>
+
+    <div class="controls">
+        <button id="btnPlayPause">⏸ Pausa</button>
+        <input type="range" id="volumen" min="0" max="1" step="0.01" value="0.5">
+    </div>
+</div>
+
+<script src="{% static 'js/audioPlayer.js' %}"></script>
+
+<section class="carrito">
+    <h3>🛒 Tu Carrito</h3>
+    <ul id="lista-carrito"></ul>
+    <p>Total: $<span id="total">0</span></p>
+    <button id="finalizar-pedido">Finalizar Pedido</button>
+</section>
+<script src="{% static 'js/carrito.js' %}"></script>
+<script src="{% static 'js/finalizar.js' %}"></script>
+
+
+<footer class="footer-navidad">
+    <p>🎅 Gracias por celebrar la Navidad con nosotros 🎁</p>
+</footer>
+
+</body>
+</html>

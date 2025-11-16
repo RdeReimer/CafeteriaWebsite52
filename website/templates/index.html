@@ -32,7 +32,7 @@
             {% for producto in productos %}
                 <div class="producto">
                     {% if "espresso" in producto.nombre|lower %}
-                        <img src="{% static 'img/sabrina.png' %}" alt="Espresso">
+                        <img src="{% static 'img/espresso.png' %}" alt="Espresso">
                     {% elif "latte" in producto.nombre|lower %}
                         <img src="{% static 'img/latteVainilla.png' %}" alt="Latte Vainilla">
                     {% elif "capuchino" in producto.nombre|lower %}

@@ -46,7 +46,7 @@
         </section>
 
         <section class="formulario-reseña">
-            <h2>📝 Deja tu Reseña</h2>
+            <h2>Deja tu Reseña</h2>
             <form method="POST">
                 {% csrf_token %}
                 {{ form.as_p }}
@@ -59,17 +59,11 @@
         <p>© 2025 Cafetería Website52 — Gracias por compartir tu experiencia ❤️</p>
     </footer>
 
-    <div id="popup-reseña" class="popup-overlay">
-        <div class="popup-content">
-            <h2>☕ ¡Gracias por tu compra!</h2>
-            <p>¿Te gustaría dejar una reseña sobre tu experiencia?</p>
-            <div class="popup-buttons">
-                <button id="ir-reseñas" class="si" data-url="{% url 'comentarios' %}">Sí</button>
-                <button id="cerrar-reseña" class="no">No</button>
-            </div>
-        </div>
+    <div class="volver-inicio">
+        <a href="/" class="btn-volver">Volver al inicio</a>
     </div>
 
-    <script src="{% static 'js/popup_reseña.js' %}"></script>
+
+    
 </body>
 </html>

@@ -1,0 +1,136 @@
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(to bottom, #b30000, #600000);
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+
+.header-navidad {
+    text-align: center;
+    padding: 30px;
+    background: #8b0000;
+    border-bottom: 3px solid gold;
+}
+
+.header-navidad h1 {
+    color: gold;
+    font-size: 3rem;
+    text-shadow: 2px 2px 5px black;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: gold;
+}
+
+
+.intro-navidad {
+    text-align: center;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+
+.productos-navidad {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    padding: 40px;
+}
+
+.card-producto {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    border: 2px solid gold;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+    transition: transform .3s;
+}
+
+.card-producto:hover {
+    transform: scale(1.05);
+}
+
+.card-producto h3 {
+    color: gold;
+}
+.card-producto img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    border: 2px solid gold;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+}
+
+.precio {
+    display: block;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    background: gold;
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: black;
+}
+
+.footer-navidad {
+    text-align: center;
+    padding: 20px;
+    background: #700000;
+    border-top: 3px solid gold;
+    color: white;
+}
+
+#snowCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.player-box {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(255,255,255,0.15);
+    border: 2px solid gold;
+    padding: 15px;
+    border-radius: 15px;
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    box-shadow: 0 0 10px gold;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#btnPlayPause {
+    background: gold;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#volumen {
+    width: 120px;
+}

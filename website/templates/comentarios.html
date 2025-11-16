@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comentarios - Cafetería Website52</title>
+
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+    <link rel="stylesheet" href="{% static 'css/popup.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Reseñas de Nuestros Clientes ☕</h1>
+        <nav>
+            <a href="{% url 'inicio' %}">Inicio</a>
+            <a href="{% url 'productos' %}">Menú</a>
+            <a href="{% url 'eventos' %}">Evento</a>
+            <a href="{% url 'sucursales' %}">Sucursales</a>
+            <a href="{% url 'comentarios' %}" class="activo">Comentarios</a>
+        </nav>
+    </header>
+
+    <main class="comentarios-container">
+        <section class="reseñas">
+            <h2>⭐ Opiniones Recientes ⭐</h2>
+
+            {% if reseñas %}
+                {% for reseña in reseñas %}
+                    <div class="reseña">
+                        <div class="reseña-header">
+                            <strong>{{ reseña.nombre_cliente }}</strong>
+                            <span class="calificacion">
+                                {% for i in "12345"|slice:":reseña.calificacion"|make_list %}
+                                    ⭐
+                                {% endfor %}
+                            </span>
+                        </div>
+                        <p class="comentario">{{ reseña.comentario }}</p>
+                        <p class="fecha">📅 {{ reseña.fecha_creacion|date:"d M Y" }}</p>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>Aún no hay reseñas. ¡Sé el primero en dejar la tuya!</p>
+            {% endif %}
+        </section>
+
+        <section class="formulario-reseña">
+            <h2>Deja tu Reseña</h2>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn">Enviar Reseña</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Cafetería Website52 — Gracias por compartir tu experiencia ❤️</p>
+    </footer>
+
+    <div class="volver-inicio">
+        <a href="/" class="btn-volver">Volver al inicio</a>
+    </div>
+
+
+    
+</body>
+</html>

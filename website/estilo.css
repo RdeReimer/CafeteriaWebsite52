@@ -46,7 +46,7 @@ nav button:hover {
 
 .inicio {
     height: 100vh;
-    background-image: url("imagenes/img1.png");
+    background-image: url("../img/img1.png");
     background-size: cover;
     background-position: center;
     display: flex;
